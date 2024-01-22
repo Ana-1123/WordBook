@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303439066703",
+    "project_id": "wordbook-6b7dd",
+    "storage_bucket": "wordbook-6b7dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303439066703:android:ea97e1d866fe85d1281c3a",
+        "android_client_info": {
+          "package_name": "com.example.wordbook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBESJ9ULZv6d9KaQ-Mv_K6I2v6j_Cv6IeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

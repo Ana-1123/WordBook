@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="coolGray">#8E9AAF</color>
+    <color name="thistle">#CBC0D3</color>
+    <color name="mistyRose">#EFD3D7</color>
+    <color name="palePurple">#FEEAFA</color>
+    <color name="darkPurple">#2C1320</color>
+    <color name="englishViolet">#5F4b66</color>
+    <color name="payenesGray">#56667A</color>
+    <color name="coolGray1">#A7ADC6</color>
+    <color name="coolGray2">#8797AF</color>
+    <color name="lavender">#DEE2FF</color>
+</resources>
