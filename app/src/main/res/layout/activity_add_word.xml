@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/lavender"
+    tools:context=".AddWord">
+
+    <TextView
+        android:id="@+id/labelWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textSize="18sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="18dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextWord"
+        android:minHeight="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelWord"
+        android:layout_alignTop="@id/labelWord"
+        android:layout_alignBottom="@id/labelWord"
+        android:hint="Enter your name" />
+    <TextView
+        android:id="@+id/labelMeaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelWord"
+        android:text="Meaning:"
+        android:textSize="18sp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextMeaning"
+        android:minHeight="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelMeaning"
+        android:layout_alignTop="@id/labelMeaning"
+        android:layout_alignBottom="@id/labelMeaning"
+        android:hint="Enter your name" />
+    <TextView
+        android:id="@+id/labelSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelMeaning"
+        android:text="Source/Exemple of use:"
+        android:textSize="18sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextSource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/labelSource"
+        android:layout_alignBottom="@id/labelSource"
+        android:layout_toEndOf="@id/labelSource"
+        android:hint="Enter your name"
+        android:minHeight="48dp" />
+
+</RelativeLayout>

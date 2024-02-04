@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,31 +42,20 @@ public class Register extends AppCompatActivity {
         login = findViewById(R.id.textViewLogin);
         show_hide_password = findViewById(R.id.passwordToggleImageView);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerNewUser();
-            }
-        });
+        registerButton.setOnClickListener(v -> registerNewUser());
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Register.this, Login.class);
-                startActivity(intent);
-            }
+        login.setOnClickListener(v -> {
+            Intent intent = new Intent(Register.this, Login.class);
+            startActivity(intent);
         });
-        show_hide_password.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(passwordEditText.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
-                {
-                    passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    show_hide_password.setImageResource(R.drawable.ic_hide_password);
-                }else{
-                    passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    show_hide_password.setImageResource(R.drawable.ic_show_password);
-                }
+        show_hide_password.setOnClickListener(v -> {
+            if(passwordEditText.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
+            {
+                passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                show_hide_password.setImageResource(R.drawable.ic_hide_password);
+            }else{
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                show_hide_password.setImageResource(R.drawable.ic_show_password);
             }
         });
     }

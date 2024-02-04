@@ -34,6 +34,12 @@
         <activity
             android:name=".Login"
             android:exported="false" />
+        <activity
+            android:name=".AddWord"
+            android:exported="false" />
+        <activity
+            android:name=".AllWords"
+            android:exported="false" />
     </application>
 
 </manifest>
