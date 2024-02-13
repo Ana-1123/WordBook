@@ -67,63 +67,45 @@ public class Register extends AppCompatActivity {
 
         // Validations for input email and password
         if (email.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Introduceți email-ul!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter your email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (password.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Introduceți parola!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter your password!", Toast.LENGTH_LONG).show();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
-            Toast.makeText(getApplicationContext(), "Introduceți un email corect!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter!", Toast.LENGTH_LONG).show();
             return;
         }
         if (password.length()<6)
         {
-            Toast.makeText(getApplicationContext(), "Parola trebuie să aibă minim 6 caractere", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Password must have at least 6 characters", Toast.LENGTH_LONG).show();
             return;
         }
         // create new user or register new user
         mAuth
                 .createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(),
+                                        "Successful registration!",
+                                        Toast.LENGTH_LONG)
+                                .show();
 
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),
-                                            "Înregistrare cu succes!",
-                                            Toast.LENGTH_LONG)
-                                    .show();
-                            FirebaseUser newUser = mAuth.getCurrentUser();
-                            DatabaseReference referenceUsers = FirebaseDatabase.getInstance().getReference("Utilizatori");
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_1").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_10").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_100").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_200").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_5").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("b_50").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("m_1").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("m_10").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("m_5").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Categorii").child("m_50").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Total").child("suma_bancnote").setValue(0);
-                            referenceUsers.child(newUser.getUid()).child("Total").child("suma_monede").setValue(0);
+                        // if the user created intent to login activity
+                        Intent intent = new Intent(Register.this, Login.class);
+                        startActivity(intent);
+                    } else {
 
-                            // if the user created intent to login activity
-                            Intent intent = new Intent(Register.this, Login.class);
-                            startActivity(intent);
-                        } else {
-
-                            // Registration failed
-                            Toast.makeText(
-                                            getApplicationContext(),
-                                            "Înregistrare a eșuat!"
-                                                    + "Vă rugăm să încercați mai târziu.",
-                                            Toast.LENGTH_LONG)
-                                    .show();
-                        }
+                        // Registration failed
+                        Toast.makeText(
+                                        getApplicationContext(),
+                                        "Registration failed!"
+                                                + "Try later.",
+                                        Toast.LENGTH_LONG)
+                                .show();
                     }
                 });
     }

@@ -57,11 +57,11 @@ public class Login extends AppCompatActivity {
         password = passwordEditText.getText().toString();
 
         if (email.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Introduceți email-ul!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter your email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (password.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Introduceți parola!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter your password!", Toast.LENGTH_LONG).show();
             return;
         }
         // sign in existing user
@@ -70,7 +70,7 @@ public class Login extends AppCompatActivity {
                         task -> {
                             if (task.isSuccessful()) {
                                 Toast.makeText(getApplicationContext(),
-                                                "Autentificare cu succes!",
+                                                "Logged in!",
                                                 Toast.LENGTH_LONG)
                                         .show();
                                 // if sign-in is successful
@@ -85,7 +85,7 @@ public class Login extends AppCompatActivity {
 
                                 // sign-in failed
                                 Toast.makeText(getApplicationContext(),
-                                                "Autentificarea a eșuat!",
+                                                "Log in failed!",
                                                 Toast.LENGTH_LONG)
                                         .show();
                             }
