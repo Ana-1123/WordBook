@@ -44,4 +44,11 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_home">home</string>
+
+    <string-array name="sorting_options">
+            <item>Sort by Date</item>
+            <item>Sort Alphabetically</item>
+            <item>Sort by Length</item>
+    </string-array>
+
 </resources>

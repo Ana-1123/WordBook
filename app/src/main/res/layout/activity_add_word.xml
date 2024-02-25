@@ -28,9 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/labelWord"
         android:layout_alignTop="@id/labelWord"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:labelFor="@id/labelWord"
-        android:maxLines="5"
+        android:maxLines="3"
         android:autofillHints="" />
 
     <TextView
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/labelMeaning"
         android:layout_alignTop="@id/labelMeaning"
-        android:layout_alignBottom="@id/labelMeaning"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:maxLines="3"
         android:labelFor="@id/labelMeaning"
         android:autofillHints="" />
 
@@ -74,10 +74,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/labelSource"
-        android:layout_alignBottom="@id/labelSource"
         android:layout_toEndOf="@id/labelSource"
         android:minHeight="48dp"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:maxLines="3"
         android:labelFor="@id/labelSource"
         android:autofillHints="" />
 

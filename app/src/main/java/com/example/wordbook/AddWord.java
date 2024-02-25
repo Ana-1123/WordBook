@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class AddWord extends AppCompatActivity {
@@ -63,7 +65,13 @@ public class AddWord extends AppCompatActivity {
         newWord.put("word", word);
         newWord.put("meaning", meaning);
         newWord.put("source",source);
+        SimpleDateFormat ISO_8601_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sss'Z'");
+        String date = ISO_8601_FORMAT.format(new Date());
+        newWord.put("date", date);
         databaseReference.child(ID_word).setValue(newWord);
-
+        Toast.makeText(getApplicationContext(), "Word successfully added!", Toast.LENGTH_LONG).show();
+        wordText.getText().clear();
+        meaningText.getText().clear();
+        sourceText.getText().clear();
     }
 }
